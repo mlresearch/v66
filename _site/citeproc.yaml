@@ -1,0 +1,166 @@
+
+- title: 'DeepFaceLIFT: Interpretable Personalized Models for Automatic Estimation of Self-Reported Pain'
+  abstract: 'Previous research on automatic pain estimation from facial expressions has focused primarily on “one-size-ﬁts-all” metrics (such as PSPI). In this work, we focus on directly estimating each individual’s self-reported visual-analog scale (VAS) pain metric, as this is considered the gold standard for pain measurement. The VAS pain score is highly subjective and context-dependent, and its range can vary signiﬁcantly among different persons. To tackle these issues, we propose a novel two-stage personalized model, named DeepFaceLIFT,for automatic estimation of VAS.This model is based on (1) Neural Network and (2) Gaussian process regression models, and is used to personalize the estimation of self-reported pain via a set of hand-crafted personal features and multi-task learning. We show on the benchmark dataset for pain analysis (The UNBC-McMaster Shoulder Pain Expression Archive) that the proposed personalized model largely outperforms the traditional, unpersonalized models the intra-class correlation improves from a baseline performance of 19% to a personalized performance of 35% while also providing conﬁdence in the model''s estimates–in contrast to existing models for the target task. Additionally, DeepFaceLIFT automatically discovers the pain-relevant facial regions for each person, allowing for an easy interpretation of the pain-related facial cues.'
+  volume: 66
+  URL: http://localhost:4000/v66/liu17a.html
+  PDF: http://proceedings.mlr.press/v66/liu17a/liu17a.pdf
+  edit: https://github.com/mlresearch/v66/edit/gh-pages/_posts/2017-09-15-liu17a.md
+  series: 'Proceedings of Machine Learning Research'
+  container-title: 'Proceedings of IJCAI 2017 Workshop on Artificial Intelligence in Affective Computing'
+  publisher: 'PMLR'
+  author: 
+  - family: Liu
+    given: Dianbo
+  - family: Fengjiao
+    given: Peng
+  - family: Rudovic
+    given: Ognjen (Oggi)
+  - family: Picard
+    given: Rosalind
+  editor: 
+  - family: Lawrence
+    given: Neil
+  - family: Reid
+    given: Mark
+  page: 1-16
+  id: liu17a
+  issued:
+    date-parts: 
+      - 2017
+      - 9
+      - 15
+  firstpage: 1
+  lastpage: 16
+  published: 2017-09-15 00:00:00 -0500
+- title: 'Predicting Tomorrow’s Mood, Health, and Stress Level using Personalized Multitask Learning and Domain Adaptation'
+  abstract: 'Predicting a person’s mood tomorrow, from data collected unobtrusively using wearable sensors and smartphones, could have a number of beneﬁcial clinical applications; however, this prediction is an extremely challenging problem. Past approaches often lack the accurate and reliable performance necessary for real-world applications. We posit that this is due to the inability of traditional, one-size-fits-all machine learning models to account for individual diﬀerences. To overcome this, we treat predicting tomorrow’s mood for a single person as one task, or problem domain. We then adopt Multitask Learning (MTL) and Domain Adaptation (DA) approaches to learn a model which is customized for each person, while still being able to beneﬁt from data across the population. Empirical results on real-world, continuous monitoring data show that the new personalized models — a MTL deep neural network, and a Gaussian Process with DA - both signiﬁcantly outperform their generic counterparts, providing substantial performance enhancements in automatic prediction of continuous levels of tomorrow’s reported mood, stress,and physical health based on data through today.'
+  volume: 66
+  URL: http://localhost:4000/v66/jaques17a.html
+  PDF: http://proceedings.mlr.press/v66/jaques17a/jaques17a.pdf
+  edit: https://github.com/mlresearch/v66/edit/gh-pages/_posts/2017-09-15-jaques17a.md
+  series: 'Proceedings of Machine Learning Research'
+  container-title: 'Proceedings of IJCAI 2017 Workshop on Artificial Intelligence in Affective Computing'
+  publisher: 'PMLR'
+  author: 
+  - family: Jaques
+    given: Natasha
+  - family: Rudovic
+    given: Ognen (Oggi)
+  - family: Taylor
+    given: Sara
+  - family: Sano
+    given: Akane
+  - family: Picard
+    given: Rosalind
+  editor: 
+  - family: Lawrence
+    given: Neil
+  - family: Reid
+    given: Mark
+  page: 17-33
+  id: jaques17a
+  issued:
+    date-parts: 
+      - 2017
+      - 9
+      - 15
+  firstpage: 17
+  lastpage: 33
+  published: 2017-09-15 00:00:00 -0500
+- title: 'Gaussian Process Regression for Continuous Emotion Recognition with Global Temporal Invariance'
+  abstract: 'Continuous emotion recognition (CER) is a task which requires the prediction of time series emotional parameter outputs corresponding to query time series inputs given training data in the form of matched pairs of input and output time series. In order to address this task, it is important to be abletomodelnotonly relationshipsbetweenpoints inthe inputandoutput spaces, butalso temporal relationships between points within the output space. Gaussian process regression (GPR) is an inference technique which has desirable properties for CER, including its ability to produce predictive distributions over the outputs rather than only point estimates. However, GPR is generally appliedtopointwisepredictionorinterpolationtasks,ratherthantopredictionsofentirefunctional outputs. We propose a covariance structure that is able to incorporate both input-output and temporal information to produce predictions that take into account the functional nature of CER data. We demonstrate the application of this method to simulated data, and to the AVEC2016 CER task, showing that GPR with this covariance structure is able to make predictions of emotional arousal from audio with over twice the accuracy of a straightforward pointwise application of GPR in the input feature space, and is furthermore able to produce predictions with accuracy approaching that of a competitive CER system using only very general component covariance models.'
+  volume: 66
+  URL: http://localhost:4000/v66/atcheson17a.html
+  PDF: http://proceedings.mlr.press/v66/atcheson17a/atcheson17a.pdf
+  edit: https://github.com/mlresearch/v66/edit/gh-pages/_posts/2017-09-15-atcheson17a.md
+  series: 'Proceedings of Machine Learning Research'
+  container-title: 'Proceedings of IJCAI 2017 Workshop on Artificial Intelligence in Affective Computing'
+  publisher: 'PMLR'
+  author: 
+  - family: Atcheson
+    given: Mia
+  - family: Sethu
+    given: Vidhyasaharan
+  - family: Epps
+    given: Julien
+  editor: 
+  - family: Lawrence
+    given: Neil
+  - family: Reid
+    given: Mark
+  page: 34-44
+  id: atcheson17a
+  issued:
+    date-parts: 
+      - 2017
+      - 9
+      - 15
+  firstpage: 34
+  lastpage: 44
+  published: 2017-09-15 00:00:00 -0500
+- title: 'Affective State Prediction of Contextualized Concepts'
+  abstract: 'Most studies on affective analysis of text focus on the sentiment or emotion expressed by a whole sentence or document. In this paper,we propose a novel approach to predict the affective states of a described event through the predictions of the corresponding subject, action and object involved in the described event. Rather than using a sentiment label or discrete emotion categories, the affective state is represented using the three dimensional evaluation-potency-activity(EPA) model. The main idea is to use automatically obtained word embedding as word representation and to use the Long Short-Term Memory(LSTM) network as the prediction model. Compared to the linear model used in the Affective Control Theory which uses manually annotated EPA lexicon, our proposed LSTM learning method using word embedding outperforms the linear model and word embedding also performs better than EPA lexicon. Most importantly, our work shows that automatically obtained word embedding outperforms manually constructed affective lexicons.'
+  volume: 66
+  URL: http://localhost:4000/v66/Li17a.html
+  PDF: http://proceedings.mlr.press/v66/li17a/li17a.pdf
+  edit: https://github.com/mlresearch/v66/edit/gh-pages/_posts/2017-09-15-Li17a.md
+  series: 'Proceedings of Machine Learning Research'
+  container-title: 'Proceedings of IJCAI 2017 Workshop on Artificial Intelligence in Affective Computing'
+  publisher: 'PMLR'
+  author: 
+  - family: Li
+    given: Minglei
+  - family: Lu
+    given: Qin
+  - family: Long
+    given: Yunfei
+  - family: Gui
+    given: Lin
+  editor: 
+  - family: Lawrence
+    given: Neil
+  - family: Reid
+    given: Mark
+  page: 45-57
+  id: Li17a
+  issued:
+    date-parts: 
+      - 2017
+      - 9
+      - 15
+  firstpage: 45
+  lastpage: 57
+  published: 2017-09-15 00:00:00 -0500
+- title: 'Arousal Detection for Biometric Data in Built Environments using Machine Learning'
+  abstract: 'This paper describes an approach using wearables to demonstrate the viability of measuring physiometric arousal indicators such as heart rate in assessing how urban built environments can induce physiometric arousal indicators in a subject. In addition, a machine learning methodology is developed to classify sensor inputs based on annotated arousal output as a target. The results are then used as a foundation for designing and implementing an aﬀective intelligent systems framework for arousal state detection via supervised learning and classiﬁcation.'
+  volume: 66
+  URL: http://localhost:4000/v66/yates17a.html
+  PDF: http://proceedings.mlr.press/v66/yates17a/yates17a.pdf
+  edit: https://github.com/mlresearch/v66/edit/gh-pages/_posts/2017-09-15-yates17a.md
+  series: 'Proceedings of Machine Learning Research'
+  container-title: 'Proceedings of IJCAI 2017 Workshop on Artificial Intelligence in Affective Computing'
+  publisher: 'PMLR'
+  author: 
+  - family: Yates
+    given: Heath
+  - family: Chamberlain
+    given: Brent
+  - family: Norman
+    given: Greg
+  - family: Hsu
+    given: William H.
+  editor: 
+  - family: Lawrence
+    given: Neil
+  - family: Reid
+    given: Mark
+  page: 58-72
+  id: yates17a
+  issued:
+    date-parts: 
+      - 2017
+      - 9
+      - 15
+  firstpage: 58
+  lastpage: 72
+  published: 2017-09-15 00:00:00 -0500

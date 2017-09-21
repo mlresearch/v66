@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Arousal Detection for Biometric Data in Built Environments using Machine Learning</title>
+  <meta name="description" content="">
+  <link rel="stylesheet" type="text/css" href="../css/main.css" />
+  
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-92432422-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+  
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+      autoNumber: "AMS"
+     }
+   },
+  tex2jax: {
+    inlineMath: [ ['$','$'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <!-- Solution from http://stackoverflow.com/questions/31593297/using-execcommand-javascript-to-copy-hidden-text-to-clipboard -->
+<script type="text/javascript"
+	src="/js/copy_input.js">
+</script>
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript"
+        src="/js/download.js"></script>
+
+    
+<meta name="citation_title" content="Arousal Detection for Biometric Data in Built Environments using Machine Learning"/>
+<meta name="citation_language" content="en"/>
+<meta name="citation_abstract_html_url" content="http://localhost:4000/v66/yates17a.html"/>
+<meta name="citation_pdf_url" content="http://proceedings.mlr.press/v66/yates17a/yates17a.pdf">
+<meta name="citation_firstpage" content="58">
+<meta name="citation_lastpage" content="72">
+<meta name="citation_author" content="Heath Yates">
+<meta name="citation_author" content="Brent Chamberlain">
+<meta name="citation_author" content="Greg Norman">
+<meta name="citation_author" content="William H. Hsu">
+<meta name="citation_publication_date" content="2017/09/15">
+<meta name="citation_inbook_title" content="IJCAI 2017 Workshop on Artificial Intelligence in Affective Computing"/>
+<meta name="citation_conference_title" content="IJCAI 2017 Workshop on Artificial Intelligence in Affective Computing"/>
+<meta name="citation_issn" content="1938-7228">
+
+<meta name="citation_pdf_url" content="http://proceedings.mlr.press/v66/yates17a/yates17a.pdf">
+
+
+<meta name="description" content="Electronic Proceedings of IJCAI 2017 Workshop on Artificial Intelligence in Affective Computing">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Arousal Detection for Biometric Data in Built Environments using Machine Learning"/>
+<meta name="twitter:site" content="@MLResearchPress" />
+<meta name="twitter:description" content="This paper describes an approach using wearables to demonstrate the viability of measuring physiometric arousal indicators such as heart rate in assessing ho..."/>
+ <meta property="fb:admins" content="neil.d.lawrence"/>
+<meta property="og:title" content="Arousal Detection for Biometric Data in Built Environments using Machine Learning"/>
+<meta property="og:description" content="This paper describes an approach using wearables to demonstrate the viability of measuring physiometric arousal indicators such as heart rate in assessing how urban built environments can induce ph..."/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2017-09-15T00:00:00-05:00">
+<meta property="article:section" content="Machine Learning">
+<meta property="og:url" content="http://localhost:4000/v66/yates17a.html"/>
+<meta property="og:image" content="http://localhost:4000/img/pmlr.png"/>
+<meta property="og:site_name" content="PMLR"/>
+
+
+</head>
+
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+    <table>
+      <tr>
+	<td><a align="left" class="site-logo" href="http://proceedings.mlr.press" target=_top><img align="right" class="jmlr" src="/img/pmlr.png" border="0"></a> </td>
+	<td><p class="site-title">Proceedings of Machine Learning Research</p></td>
+      </tr>
+    </table>
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+      <div class="trigger">
+	<a class="page-link" href="/v66/">Volume 66</a>
+	<a class="page-link" href="/">All Volumes</a>
+	<a class="page-link" href="http://www.jmlr.org/">JMLR</a> 
+	<a class="page-link" href="http://www.jmlr.org/mloss">MLOSS</a>
+	<a class="page-link" href="/faq.html">FAQ</a>
+	<a class="page-link" href="/spec.html">Submission Format</a>
+	<a class="page-link" href="http://localhost:4000//v66/feed.xml">
+	<img src="/img/RSS.gif" class="rss" alt="RSS Feed">
+	</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content" id="content">
+      <div class="wrapper">
+        <article class="post-content">
+  <h1>Arousal Detection for Biometric Data in Built Environments using Machine Learning</h1>
+  
+
+
+<p align="right">[<a href="https://github.com/mlresearch/v66/edit/gh-pages/_posts/2017-09-15-yates17a.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/mlresearch/v66/edit/gh-pages/_posts/2017-09-15-yates17a.md', 13);">edit</a>]</p>
+
+
+  <div id="authors" class="authors">
+    
+    
+    Heath Yates, 
+
+    
+    Brent Chamberlain, 
+
+    
+    Greg Norman, 
+
+    
+    William H. Hsu
+
+    ;
+  </div>
+<div id="info" class="authors">
+    Proceedings of IJCAI 2017 Workshop on Artificial Intelligence in Affective Computing, PMLR 66:58-72, 2017.
+  </div> <!-- info -->
+  
+  <h4>Abstract</h4>
+  <div id="abstract" class="abstract">
+    This paper describes an approach using wearables to demonstrate the viability of measuring physiometric arousal indicators such as heart rate in assessing how urban built environments can induce physiometric arousal indicators in a subject. In addition, a machine learning methodology is developed to classify sensor inputs based on annotated arousal output as a target. The results are then used as a foundation for designing and implementing an aﬀective intelligent systems framework for arousal state detection via supervised learning and classiﬁcation.
+  </div>
+  <h4>Related Material</h4>
+  <div id="extras">
+    <ul>
+      <li><a href="http://proceedings.mlr.press/v66/yates17a/yates17a.pdf" target="_blank" onclick="ga('send', 'event', 'PDF Downloads', 'Download', 'http://proceedings.mlr.press/v66/yates17a/yates17a.pdf', 10);">Download PDF</a></li>
+      
+    </ul>
+  </div>
+  
+
+</article>
+
+
+
+
+
+
+
+
+
+<table>
+  <tr>
+    <td><div class="codebox" >
+	<pre><code id="bibtex">@InProceedings{pmlr-v66-yates17a,
+  title = 	 {Arousal Detection for Biometric Data in Built Environments using Machine Learning},
+  author = 	 {Heath Yates and Brent Chamberlain and Greg Norman and William H. Hsu},
+  booktitle = 	 {Proceedings of IJCAI 2017 Workshop on Artificial Intelligence in Affective Computing},
+  pages = 	 {58--72},
+  year = 	 {2017},
+  editor = 	 {Neil Lawrence and Mark Reid},
+  volume = 	 {66},
+  series = 	 {Proceedings of Machine Learning Research},
+  address = 	 {},
+  month = 	 {20 Aug},
+  publisher = 	 {PMLR},
+  pdf = 	 {http://proceedings.mlr.press/v66/yates17a/yates17a.pdf},
+  url = 	 {http://localhost:4000/v66/yates17a.html},
+  abstract = 	 {This paper describes an approach using wearables to demonstrate the viability of measuring physiometric arousal indicators such as heart rate in assessing how urban built environments can induce physiometric arousal indicators in a subject. In addition, a machine learning methodology is developed to classify sensor inputs based on annotated arousal output as a target. The results are then used as a foundation for designing and implementing an aﬀective intelligent systems framework for arousal state detection via supervised learning and classiﬁcation.}
+}
+</code></pre></div></td>
+    <td><button id="button-bibtex1" onclick="CopyToClipboard('bibtex')">Copy BibTeX</button></td><td><button id="button-bibtex2" onclick="DownloadToFile('pmlr-v66-yates17a.bib', 'bibtex')">Download BibTeX</button></td>
+  </tr>
+</table>
+    
+
+
+
+
+
+
+<table>
+  <tr>
+    <td><div class="codebox" >
+	<pre><code id="endnote">%0 Conference Paper
+%T Arousal Detection for Biometric Data in Built Environments using Machine Learning
+%A Heath Yates
+%A Brent Chamberlain
+%A Greg Norman
+%A William H. Hsu
+%B Proceedings of IJCAI 2017 Workshop on Artificial Intelligence in Affective Computing
+%C Proceedings of Machine Learning Research	
+%D 2017
+%E Neil Lawrence
+%E Mark Reid	
+%F pmlr-v66-yates17a
+%I PMLR	
+%J Proceedings of Machine Learning Research	
+%P 58--72
+%U http://localhost:4000
+%V 66
+%W PMLR
+%X This paper describes an approach using wearables to demonstrate the viability of measuring physiometric arousal indicators such as heart rate in assessing how urban built environments can induce physiometric arousal indicators in a subject. In addition, a machine learning methodology is developed to classify sensor inputs based on annotated arousal output as a target. The results are then used as a foundation for designing and implementing an aﬀective intelligent systems framework for arousal state detection via supervised learning and classiﬁcation.
+</code></pre></div></td>
+    <td><button id="button-endnote1" onclick="CopyToClipboard('endnote')">Copy Endnote</button></td><td><button id="button-endnote2" onclick="DownloadToFile('pmlr-v66-yates17a.enw', 'endnote')">Download Endnote</button></td>
+  </tr>
+</table>
+    
+    
+
+
+    
+    
+
+
+
+
+
+
+<table>
+  <tr>
+    <td><div class="codebox" >
+	<pre><code id="apa">Yates, H., Chamberlain, B., Norman, G. & Hsu, W.H.. (2017). Arousal Detection for Biometric Data in Built Environments using Machine Learning. <i>Proceedings of IJCAI 2017 Workshop on Artificial Intelligence in Affective Computing, in PMLR</i> 66:58-72
+
+</code></pre></div></td>
+    <td><button id="button-apa1" onclick="CopyToClipboard('apa')">Copy APA</button></td><td><button id="button-apa2" onclick="DownloadToFile('pmlr-v66-yates17a.txt', 'apa')">Download APA</button></td>
+  </tr>
+</table>
+    
+
+
+
+
+
+
+
+
+
+      </div>
+    </div>   
+  </body>
+
+    <body>
+  <div id="content">
+    <center>This site last compiled Wed, 20 Sep 2017 22:47:27 -0500</center>
+
+    <table width="100%">
+      <tr>
+	<td align="left"><font size="-1">
+	    <i><a href="https://github.com/mlresearch/v66">Github Account</a></i></font></td>
+	<td align="right"><font size="-1">
+	    Copyright &copy <a href="http://proceedings.mlr.press">PMLR</a> 2017. All rights reserved.</font></td>
+      </tr>
+    </table>
+  </div>
+</body>
+
+
+</html>

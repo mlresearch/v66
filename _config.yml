@@ -10,18 +10,14 @@ url: http://proceedings.mlr.press
 location: Melbourne, Australia
 published: 2017-09-15
 layout: proceedings
-id: COPA2017
+id: AFFYCOMP2017
 month: 0
 cycles: false
 editor:
-- given: Heath
-  family: Yates
-- given: William
-  family: Hsu
-- given: Brent
-  family: Chamberlain
-- given: Joshua
-  family: Weese
+- given: Neil 
+  family: Lawrence
+- given: Mark
+  family: Reid
 title: Proceedings of Machine Learning Research
 description: |
   Proceedings of IJCAI 2017 Workshop on Artificial Intelligence in Affective Computing on 20 August 2017
